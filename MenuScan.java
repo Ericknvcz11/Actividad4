@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class MenuScan {
-	
+public class MenuScan { 
 	
 	public static void main(String[] args) {
 		
@@ -11,10 +10,8 @@ public class MenuScan {
         String figura = scanner.nextLine();
         
         String c = "Circulo";
-    	boolean b = Boolean.parseBoolean(c);
     	
     	String cu = "Cuadrado";
-    	boolean o = Boolean.parseBoolean(cu);
         
         if (figura.equals(c)) {
             System.out.println("Ingrese el radio del círculo:");
@@ -25,12 +22,17 @@ public class MenuScan {
             calcular = scanner.nextLine();
             
             if (calcular.equals("area")){
-            	double area = 3.1416 * Math.pow(radio, 2);
-            	System.out.println("El area es " + area); 
+            	Circulo A = new Circulo(); 
+    			
+    			A.cambialongitud(radio);
+    			System.out.println(A.calcularAreac());
             }
+            
             else if (calcular.equals("circunferencia")){
-            	double circunferencia = (2 * 3.1416) * radio;
-            	System.out.println("La circunferencia es " + circunferencia); 
+            	Circulo B = new Circulo(); 
+    			
+    			B.cambialongitud(radio);
+    			System.out.println(B.calcularCircunferencia()); 
             }
         }
         
@@ -43,16 +45,22 @@ public class MenuScan {
             calcular = scanner.nextLine();
             
             if (calcular.equals("area")){
-            	double area = Math.pow(lado, 2);
-            	System.out.println("El area es " + area); 
+            	Cuadrado A = new Cuadrado(); 
+    			
+    			A.cambiarlongitud(lado);
+    			System.out.println(A.calcularArea());
             }
             else if (calcular.equals("perimetro")){
-            	double perimetro = lado * 4;
-            	System.out.println("El perimetro es " + perimetro); 
+            	Cuadrado B = new Cuadrado();  
+    			
+    			B.cambiarlongitud(lado);
+    			System.out.println(B.calcularPerimetro());
             }
             else if (calcular.equals("diagonal")){
-            	double diagonal = Math.sqrt(Math.pow(lado, 2)+Math.pow(lado, 2));
-            	System.out.println("La diagonal es " + diagonal); 
+            	Cuadrado C = new Cuadrado(); 
+    			
+    			C.cambiarlongitud(lado);
+    			System.out.println(C.calcularDiagonal());
             }
         }
 	}
